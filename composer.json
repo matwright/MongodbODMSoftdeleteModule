@@ -1,0 +1,33 @@
+{
+"name" : "bs-technologies/MongodbODMSoftdeleteModule",
+
+  "description": "ZF2 module for ODM Soft Delete",
+    "type": "zf2 module",
+       "authors": [
+        {
+            "name": "Mat Wright",
+            "email": "mat@bstechnologies.com",
+            "homepage": "http://www.bstechnologies.com"
+        }
+        ],
+    "license": "MIT",
+
+    "require" : {
+    "php" : ">=5.3.3",
+    "doctrine/mongodb-odm-softdelete" : "dev-master"
+    
+  },
+  "repositories" : [ {
+    "type" : "composer",
+    "url" : "https://packagist.org/"
+  }],
+
+    "autoload": {
+        "psr-0": {
+            "MongodbODMSoftdeleteModule": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
