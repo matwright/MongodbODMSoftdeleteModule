@@ -1,5 +1,5 @@
 {
-"name" : "bs-technologies/MongodbODMSoftdeleteModule",
+"name" : "matwright/MongodbODMSoftdeleteModule",
 
   "description": "ZF2 module for ODM Soft Delete",
     "type": "zf2 module",
