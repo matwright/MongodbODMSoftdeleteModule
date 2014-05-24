@@ -1,8 +1,8 @@
 <?php
 namespace MongodbODMSoftdeleteModule\Domain\Repository;
 
-use Doctrine\Common\Util\Debug;
 use Doctrine\ODM\MongoDB\SoftDelete\SoftDeleteable;
+
 /**
  *
  * @author matwright
@@ -10,6 +10,28 @@ use Doctrine\ODM\MongoDB\SoftDelete\SoftDeleteable;
  */
 trait SoftDeleteRepositoryTrait
 {
+
+    private $sdm;
+
+    private $entityClass;
+
+    /**
+     *
+     * @return the $entityClass
+     */
+    public function getEntityClass()
+    {
+        return $this->entityClass;
+    }
+
+    /**
+     *
+     * @param field_type $entityClass            
+     */
+    public function setEntityClass($entityClass)
+    {
+        $this->entityClass = $entityClass;
+    }
     /*
      * (non-PHPdoc) @see \MongodbODMSoftdeleteModule\src\MongodbODMSoftdeleteModule\Domain\Repository\SoftDeleteRepositoryInterface::softDelete()
      */
@@ -45,7 +67,6 @@ trait SoftDeleteRepositoryTrait
     {
         $this->sdm->deleteBy($this->getEntityClass(), $criteria, $flags);
         
-
         $this->sdm->flush();
     }
     
